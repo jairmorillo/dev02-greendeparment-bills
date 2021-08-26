@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery: md5()</title>
+<meta charset="utf-8" />
+</head>
+
+<body>
+
+<p><a href="#" id="convert">md5()</a></p>
+
+<div id="test">Test</div>​
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.md5.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#btnConvert').click(function(e) {
+        var strVal = $('#txtValue').val();
+        if (strVal.length == 0) {
+            $('#dvValue').html('Please enter something');
+        }
+        else {
+            var strMD5 = $.md5(strVal);
+            $('#dvValue').html("MD5 string of <b>" + strVal + "</b> is <b>" + strMD5 + "</b>");
+        }
+        e.preventDefault();
+    });
+});
+</script>
+<p><u>Using jQuery MD5 Plugin</u></p><br/>
+Enter Value : <input type="text" id="txtValue" />
+<br/><br/>
+<input type="button" id="btnConvert" value=" Convert to MD5 "/>
+<br/><br/>
+<div id="dvValue"></div>
+</body>
+</html>
